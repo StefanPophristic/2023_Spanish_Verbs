@@ -349,6 +349,7 @@ function make_slides(f) {
     submit : function(e){
       //if (e.preventDefault) e.preventDefault(); // I don't know what this means.
       exp.subj_data = {
+        prolific_ID : $("#prolific_ID").val(),
         gender : $("#gender").val(),
         age : $("#age").val(),
         education : $("#education").val(),
@@ -364,7 +365,8 @@ function make_slides(f) {
 
       // The second part of the questionaire is not optional throw an
       // error if any of the questions in the second part are left unanswered
-      if (exp.subj_data.gender != "" &
+      if (exp.subj_data.prolific_ID != "" &
+        exp.subj_data.gender != "" &
         exp.subj_data.age != "" &
         exp.subj_data.education != "" &
         exp.subj_data.assess != "" &

@@ -402,8 +402,8 @@ function make_slides(f) {
         },
         body: JSON.stringify({
           experimentID: "bILHhWBKMfwq",
-          filename: "UNIQUE_FILENAME.csv",
-          data: dataAsString,
+          filename: "test_1.csv",
+          data: exp.data,
         }),
       });
       // proliferate.submit(exp.data);

@@ -394,18 +394,6 @@ function make_slides(f) {
           "subject_information" : exp.subj_data,
           "time_in_minutes" : (Date.now() - exp.startT)/60000,
       };
-      // fetch("https://pipe.jspsych.org/api/data/", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Accept: "*/*",
-      //   },
-      //   body: JSON.stringify({
-      //     experimentID: "bILHhWBKMfwq",
-      //     filename: "test_1.csv",
-      //     data: exp.data,
-      //   }),
-      // });
       proliferate.submit(exp.data);
     }
   });

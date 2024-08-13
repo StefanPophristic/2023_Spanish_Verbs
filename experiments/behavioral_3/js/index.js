@@ -33,7 +33,7 @@ $(document).ready(function() {
 // }
 
 // Parameter to automatically change number of minutes in study instructions
-var studyDuration =  "35"
+var studyDuration =  "45"
 
 /*
 Input: object containing a .structure element, which is an array with the slide structures

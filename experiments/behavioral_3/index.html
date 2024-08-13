@@ -1,0 +1,254 @@
+<html>
+
+<head>
+    <title>Language study</title>
+
+    <!--JS-->
+
+    <!-- external general utilities -->
+    <script src="shared/js/jquery-1.11.1.min.js "></script>
+    <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="shared/js/underscore-min.js"></script>
+    <script src="shared/js/uniqueturker.js"></script>
+
+    <!-- if you want to draw stuff: -->
+    <!-- <script src="../_shared/js/raphael-min.js"></script> -->
+
+    <!-- cocolab experiment logic -->
+    <script src="shared/js/exp-V2.js"></script>
+    <script src="shared/js/stream-V2.js"></script>
+
+    <!-- cocolab general utilities -->
+    <script src="shared/js/mmturkey.js "></script>
+    <script src="shared/js/browserCheck.js"></script>
+    <!-- if you want to draw cute creatures (depends on raphael): -->
+    <!-- <script src="../_shared/js/ecosystem.js"></script> -->
+
+    <!-- experiment specific helper functions -->
+    <script src="shared/js/utils.js"></script>
+    <script src="shared/preload.js"></script>
+
+    <!--CSS-->
+    <link href="shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- stimuli file -->
+    <script src="js/stimuli.js"></script>
+    <!-- experiment file -->
+    <script src="js/index.js"></script>
+
+    <script src="https://proliferate.alps.science/static/js/proliferate.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="init();">
+  <noscript>This task requires JavaScript.</noscript>
+
+  <div class="slide" id="consent" >
+    <br>
+    <p>En este estudio verá varias palabras. Tendrá que responder si las palabras son reales o no, es decir, si pertenecen al idioma español o no. El estudio durará aproximadamente <span class='studyDuration'></span> minutos. Si quiere participar por favor lea la autorización y pulse el botón “estoy de acuerdo”. </p>
+
+    <div style="font-size:15">
+      <div class="cntr">
+        <p> <b> Informed Consent Form for Adult Participants Earning Money via Online Platforms IRB-FY2016-747 </b> <br> </p>
+      </div>
+      <p>You have been invited to take part in a research study to learn more about language processing in the brain. This study will be conducted by Dr. Alec Marantz, FAS - Psychology, Arts & Science, New York University. </p>
+      <p>If you agree to be in this study, you will be asked to do the following:</p>
+      <ul>
+        <li> Provide basic demographic information about your age, gender, country of birth, country of residence, and linguistic background. </li>
+        <li> Complete a linguistic task such as reading sentences or words, naming pictures or describing scenes, watching videos, making up sentences of your own, or participating in a simple language game. </li>
+      </ul>
+      <p>Participation in this study will take between 5 and 35 minutes. Taking part in this study is voluntary. You may refuse to participate or withdraw at any time without penalty.</p>
+      <p>There are no known risks associated with your participation in this research beyond those of everyday life. Although you will receive no direct benefits for participation in this study, it may make you more aware of how knowledge is discovered in psychology and help the investigator better understand how people process words, phrases and sentences.</p>
+      <p>All data collected will be retained indefinitely, though no identifying information will be collected or retained. All data will be accessible only to Dr. Alec Marantz and his research associates. Information not containing identifiers may be used in future research or shared with other researchers without your additional consent.</p>
+      <p>If there is anything about the study or taking part in it that is unclear or that you do not understand, or if you have questions or wish to report a research-related problem, you may contact the principal investigator, Dr. Dr. Alec Marantz at (212) 998-3593, marantz@nyu.edu, 10 Washington Place Room 611, New York, NY, 10003.</p>
+      <p>For questions about your rights as a research participant, you may contact the University Committee on Activities Involving Human Subjects (UCAIHS), New York University, (212) 998-4808 or ask.humansubjects@nyu.edu, 665 Broadway, Suite 804, New York, NY 10012.</p>
+    </div>
+
+    <div class="cntr">
+      <button id="consent_button" type="button" >Estoy de acuerdo</button>
+      <br><br>
+    </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide" id="instructions_1" >
+    <div class="cntr">
+      <img src="images/nellab_logo.png" alt="NELLAB" style="width:100; margin:20px">
+    </div>
+
+<!--     <p id="cocolab">Stanford ALPS Lab</p> -->
+      <p id="instruct-text"> Va a ver varias palabras en los próximos ~<span class='studyDuration'></span> minutos. <br> <br>
+        Cuando vea cada palabra, lo más rápido y preciso como le sea posible decida si la palabra es: <br>
+      </p>
+      <p id="instruct-text">
+        <ul>
+          <li> <b> Una palabra real </b></li>
+          <p> Una palabra real en Español <br>
+          <b> Pulse la tecla J</b> usando el dedo índice derecho </p>
+          <li> <b> Una palabra sin sentido </b> </li>
+          <p> Cualquier palabra que no es una palabra real en Español (puede parecer una palabra real como “escuelo” o puede no parecer a ninguna palabra real como “macepero”) <br>
+          <b> Pulse la tecla F</b> con el dedo índice izquierdo </p>
+        </ul>
+    </p>
+    <p id="instruct-text">
+      Por favor coloque los dedos índices en las teclas en todo momento, y utilice la mano izquierda para la tecla F y la mano derecha para la tecla J. Es muy importante que intente responder lo más rápido y preciso que pueda. Por favor complete el experimento en una sesión (aproximadamente <span class='studyDuration'></span> minutos); no empiece el experimento si no tiene suficiente tiempo para completarlo. Tendrá seis pausas para descansar un poco. <br><br> </p>
+
+    <div class="cntr">
+      <p> Empezaremos con unos ejemplos de práctica! <br> </p>
+
+      <button id="start_practice" type="button" >Empezar</button>
+      <br> <br>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide" id="practicetrial">
+    <div class="center-container">
+      <p id="practice_word"></p>
+    </div>
+    <p class='fdbck' id="feedback"></p>
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide" id="break">
+    <div id="break_slide">
+      <div class="cntr" >
+        <p style="font-size:30"><b>Pausa!</b></p>
+      </div>
+
+      <div class="cntr" >
+        <p id="percentage" style="font-size:24"><b></b></p>
+      </div>
+
+      <div class="cntr">
+        <button id="continue_button" type="button" >Continuar</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide" id="beginpage">
+    <div class="cntr">
+      <p style="font-size:40"><b>Estudio</b></p>
+    </div>
+
+    <p>El estudio empezará ahora.</p>
+
+    <p>Para participar de manera eficiente, por favor:</p>
+    <ul>
+      <li> Maximice la ventana </li>
+      <li> Apague su teléfono/notificaciones/música </li>
+      <li> Evite distracciones </li>
+      <li> Evite pausas no programadas </li>
+    </ul>
+
+    <div class="cntr">
+      <button id="start_button" type="button" >Empezar</button>
+      <br><br>
+    </div>
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide" id="objecttrial">
+        <div class="center-container">
+            <div class="cross" id="fixation_cross"></div>
+            <p id="target_word">Target Word</p>
+        </div>
+
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div class="slide"  id="subj_info">
+    <div class="cntr">
+    <div class="long_form">
+      <div class="subj_info_title">Cuestionario</div>
+      <p class="info" style="margin:0 0 0px 0;"><br>Por favor, conteste a las siguientes preguntas. Las preguntas marcadas con asterisco son obligatorias.
+      </p>
+
+
+      <p>Cual es su Prolific ID:*  <input type="text" id="prolific_ID"/></p>
+
+      <p>Género:*
+        <select id="gender">
+          <label><option value=""/></label>
+          <label><option value="Male"/>Masculino</label>
+          <label><option value="Female"/>Feminino</label>
+          <label><option value="Nonbinary"/>No binarie</label>
+          <label><option value="Other"/>Otro</label>
+        </select>
+      </p>
+
+      <p>Edad:* <input type="text" id="age"/></p>
+
+      <p>Por favor indique su nivel más alto de educación (o la aproximación Estado Unidense equivalente a un título obtenido en otro país):*
+        <select id="education">
+          <label><option value="-1"/></label>
+          <label><option value="0"/>Menos que escuela secundaria</label>
+          <label><option value="1"/>Escuela secundaria/preparatoria</label>
+          <label><option value="2"/>Algo de Universidad</label>
+          <label><option value="3"/>Universidad</label>
+          <label><option value="4"/>Algo de Escuela Post-Graduado</label>
+        </select>
+      </p>
+
+
+      <p>¿Ud. ha tenido un problema de visión durante el estudio?* </p>
+      <label><input type="radio"  name="assess" value="No"/>No</label>
+      <label><input type="radio"  name="assess" value="Yes"/>Sí</label>
+
+      <br> <br>
+      <p>Por favor indique el número de años y meses que Ud. pasó en cada ambiente lingüístico:*</p>
+      <p>Un país donde Español es hablado : <input type="text" id="country"/></p>
+      <p>Una familia donde Español es hablado : <input type="text" id="family"/></p>
+      <p>Una escuela y/o ambiente de trabajo donde Español es hablado : <input type="text" id="schoolwork"/></p>
+      <br> <br>
+
+      <p>Por favor indique todos los idiomas que conozca en orden de adquisición (su idioma materno primero):* <input type="text" id="otherLanguage"/></p>
+
+      <p>Por favor indique las culturas con las cuales Ud. se identifica (por ejemplo los Estados Unidos y México):* <input type="text" id="culture"/></p>
+
+
+      <p>¿Ud. ha encontrado algun problema con el estudio?</p>
+      <textarea id="problems" rows="2" cols="50"></textarea>
+
+      <p>¿Tiene comentarios sobre el estudio? </p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/>
+
+      <p class="err2" style="color:red">Por favor responde a las preguntas obligatorias.</p>
+
+      <br>
+      <button onclick="_s.submit()">Envíar</button>
+      <br><br>
+        </div>
+          </div>
+  </div>
+  </div>
+
+  <div class="wrapper">
+  <div id="thanks" class="slide js" >
+    <div class="cntr">
+      <p  class="big">¡Gracias!</p>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="progress">
+    <span>Progreso:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

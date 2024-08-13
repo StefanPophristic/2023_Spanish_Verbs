@@ -1,0 +1,149 @@
+/*.slider {*/
+  /* default is width 400 and margin 10 */
+	/*width: 400;
+	margin: 10px;
+}
+
+.slider_table {
+	margin: auto auto;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.highlight_numbers {
+	font-size: 28;
+	font-weight: bold;
+}
+
+.highlight_numbers_other {
+	font-size: 20;
+	font-style: italic;
+}*/
+
+/*
+Define the fixation cross
+*/
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#objecttrial {
+    height: 100%;
+    width: 100%;
+}
+
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 0; /* Ensure no extra space around the text */
+}
+
+.cross {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cross::before, .cross::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+}
+
+.cross::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.cross::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+
+
+button {
+  	background-color: rgb(127, 127, 127);
+  	font-family: 'Courier New';
+  	color: white;
+}
+.left-aligned {
+  text-align: left;
+}
+
+.cntr {
+  text-align: center;
+}
+
+.fdbck {
+  text-align:center;
+  color: red;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#break_slide {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#target_word, #practice_word {
+  /* text-align: center; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  font-size: 20pt;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type=text] {
+    width: 100%;
+    padding: 50px 50px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+<p>Padded text fields:</p>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+
+</body>
+</html>

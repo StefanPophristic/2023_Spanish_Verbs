@@ -9,7 +9,7 @@ Data presented on at AMLAP 2024 are pooled from Behavioral_2 and Behavioral_3. L
 - [Behvioral_2](https://stefanpophristic.github.io/2023_Spanish_Verbs/experiments/behavioral_2/index.html)
 - [Behavioral_3](https://stefanpophristic.github.io/2023_Spanish_Verbs/experiments/behavioral_3/index.html)
 
-Anonymized data from both experiments can be found in the Data folder, and the analysis can be found under Analysis/AMLAP. 
+Anonymized data from both experiments can be found in the Data folder, and the analysis can be found under Analysis/AMLAP.
 
 # Experiments
 
@@ -21,3 +21,13 @@ First version of the experiment including the following suffixes:
 
 ## Behavioral_2
 Second version of the experiment including the following suffixes:
+
+- ar: {'aría', 'aríamos', 'arían', 'arías', 'aba', 'ábamos', 'aban', 'abas', 'aré', 'arás', 'ará', 'aremos', 'arán'}
+- er: {'ería', 'eríamos', 'erían', 'erías', 'ía', 'ías', 'ían', 'íamos', 'eré', 'erás', 'erá', 'eremos', 'erán'}
+- ir: {'iría', 'iríamos', 'irían', 'irías',  'ía', 'ías', 'ían', 'íamos', 'iré', 'irás', 'irá', 'iremos', 'irán'}
+
+
+## Behavioral_3
+Identical to Behavioral_2, except for following changes:
+- Fonts and colors changed to match format of the MEG version being run.
+- Added breaks and fixation crosses
